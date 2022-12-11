@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>control form"></form></title>
+    <style>
+      .parent{
+        display: flex;
+        justify-content: center;
+      }
+      tr td:nth-child(1){
+        text-align: right;
+    }
+    td,th{
+        font-size: 22px;
+        border: 3px solid rgb(56, 56, 56);
+        border-radius: 4px;
+        padding: 5px;
+    }
+    input,select,textarea{
+        height: 30px;
+        font-size: 22px;
+        padding-left: 5px;
+        color: rgb(97, 97, 255);
+    }
+    label{
+        margin-left: 30px;
+    }
+    tr:nth-child(odd)
+    {
+        background-color: rgb(238, 238, 238);
+    }
+    button{
+        height: 30px;
+        margin:0px 0px 0px 20px ;
+    }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <table>
+        <thead>
+          <th colspan="2">complete control formn</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Text</td>
+            <td><input type="text" name="" id="text" /></td>
+          </tr>
+          <tr>
+            <td>Measure Unit</td>
+            <td style="    display: flex;
+            align-items: center;">
+              <select name="" id="">
+                <optgroup label="Linear">
+                  <option value="Milimeter">Milimeter</option>
+                  <option value="centimeter">centimeter</option>
+                  <option value="kilometer">kilometer</option>
+                </optgroup>
+                <optgroup label="Weight">
+                  <option value="gram">Gram</option>
+                  <option value="kilogram">kilogram</option>
+                  <option value="ton">Ton</option>
+                </optgroup>
+              </select>
+              <button>Change</button>
+            </td>
+          </tr>
+          <tr>
+            <td>Color</td>
+            <td><input type="color" /></td>
+          </tr>
+          <tr>
+            <td>Date</td>
+            <td><input type="date" /></td>
+          </tr>
+          <tr>
+            <td>Radio Button</td>
+            <td style="display:flex;align-items: center;"><label for="one">one</label><input name="radio" value="one" type="radio"><label for="two">two</label><input name="radio" type="radio"><label for="three">three</label><input name="radio" type="radio"></td>
+          </tr>
+          <tr>
+            <td>Slider</td>
+            <td><input type="range"></td>
+        </tr>
+        <tr>
+            <td>Number</td>
+            <td><input type="number"></td>
+        </tr>
+        <tr>
+            <td>Protected text</td>
+            <td><input type="text" value="protected text here" disabled></td>
+        </tr>
+        <tr>
+            <td>Weild Field</td>
+            <td><textarea name="" id="" cols="30" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td><input type="password" id="pwd"></td>
+        </tr>
+        <tr >
+          <td colspan="2" style="text-align: center;">This is a Comment.</td>
+        </tr>
+        <tr>
+          <td>Mail address</td>
+          <td style="display: flex;align-items: center;"><input type="email" name="" id="mail"><input type="checkbox" name="" id="">check for consent</td>
+        </tr>
+        <tr>
+          <td colspan="2" style="text-align: center;"> <button onclick="validator()"style="color:black">submit</button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <script>
+      function validator(){
+        var name=document.getElementById("text").value;
+        var email=document.getElementById("mail").value;
+        var password=document.getElementById("pwd").value;
+        var regx=/^(?:[A-Z][^\s]*\s?)+$/;
+        var mailregex=/^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+        var passregx = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{7,14}$/;
+        // alert()
+        if(name.length>25||!name.match(regx)){
+        alert(" name should be less than 25 character & and in proper case")
+        return false;
+        }
+        else if(email.length >30||!email.match(mailregex)){
+        alert("invalid email")
+        return false;
+        }
+        else if(password.length<=6||!password.match(passregx)){
+          alert("invalid password")
+          return false;
+        }
+        else{
+          alert("form has been submitted")
+          return false;
+         
+        }
+
+      }
+    </script>
+  </body>
+</html>
