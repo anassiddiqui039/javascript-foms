@@ -1,0 +1,54 @@
+* {
+  margin: 12px;
+  /* padding: 3px; */
+}
+.parent {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.class {
+    width:95%;
+    
+    display: flex;
+    
+    justify-content: space-between;
+
+}
+.forms{
+    width: 50%;
+    
+    border: 1px solid black;
+}
+
+select {
+  width: 28%;
+}
+.btn {
+    display: flex;
+  justify-content: center;
+  margin-right: 1px;
+}
+button{
+    width: 80%;
+}
+.result{
+  width: 40%;
+  border: 1px solid black;
+ 
+}
+h1{
+  text-align: center;
+  text-decoration: underline;
+
+}
+span{
+  color: red;
+}
+.invoice{
+  display: flex;
+  justify-content: space-between;
+}
